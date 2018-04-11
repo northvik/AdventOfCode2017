@@ -1,27 +1,32 @@
 import {IMillisecond, InputArray} from '../../Interface';
 
+// I must admit I didn't solved this one by my self
 export class Millisecond3 implements IMillisecond {
     public solvePartOne(input: InputArray): number {
         const cell = parseInt(input[0], 10);
-        let width = 1;
-        let current = 1;
-        while (( current * current) < cell) {
-            width = current;
-            current += 2;
+        if (cell === 1){
+            return 0;
         }
-
-        let ringRemainder = cell - (width * width);
-        let sideRemainder = ringRemainder;
-
-        while (ringRemainder > (width / 2) - 1) {
-            sideRemainder = ringRemainder;
-            ringRemainder -= (width + 1);
-        }
-
-        return sideRemainder;
+        const ringSize = this.getClosestOddPrime(cell);
+        const ringNumber = this.getRingNumber(ringSize);
+        return (ringNumber - 1) + this.getDistanceFromCenter(input, ringSize);
     }
 
      public solvePartTwo(input: InputArray): string {
         return 'NOT SOLVED: ' + input[0];
     }
+
+    protected getClosestOddPrime(input) {
+        const nextPrime = Math.ceil(Math.sqrt(input));
+        return (nextPrime % 2 === 0) ? nextPrime + 1 : nextPrime;
+    };
+
+    protected getRingNumber(input) {
+        return (input + 1) / 2;
+    };
+
+    protected getDistanceFromCenter(input, ringSize){
+        return Math.abs(((Math.pow(ringSize,2) - input) % (ringSize - 1)) - Math.floor(ringSize / 2));
+    }
+
 }
