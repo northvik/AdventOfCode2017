@@ -1,6 +1,7 @@
 import {IMillisecond, InputArray} from '../../Interface';
+import { BaseMillisecond } from '../baseMillisecond';
 
-export class Millisecond4 implements IMillisecond {
+export class Millisecond4 extends BaseMillisecond implements IMillisecond {
     public solvePartOne(input: InputArray): number {
         let count = 0;
         for (let i = 0; i < input.length; i++) {

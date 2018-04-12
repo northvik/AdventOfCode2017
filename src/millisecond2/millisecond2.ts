@@ -1,6 +1,7 @@
 import {IMillisecond, InputArray} from '../../Interface';
+import { BaseMillisecond } from '../baseMillisecond';
 
-export class Millisecond2 implements IMillisecond {
+export class Millisecond2 extends BaseMillisecond implements IMillisecond {
     public grid: {};
 
     public setMatrix(matrixRows) {

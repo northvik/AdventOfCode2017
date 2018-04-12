@@ -1,6 +1,7 @@
 import { IMillisecond, InputArray } from '../../Interface';
+import { BaseMillisecond } from '../baseMillisecond';
 
-export class Millisecond6 implements IMillisecond {
+export class Millisecond6 extends BaseMillisecond implements IMillisecond {
 
     protected tested: string[];
     protected banks: number[];

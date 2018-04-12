@@ -1,6 +1,7 @@
 import { IMillisecond, InputArray } from '../../Interface';
+import { BaseMillisecond } from '../baseMillisecond';
 
-export class Millisecond5 implements IMillisecond {
+export class Millisecond5 extends BaseMillisecond implements IMillisecond {
 
     public solvePartOne(input: InputArray): number {
         const maze = this.convertToInt(input);

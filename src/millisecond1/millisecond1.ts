@@ -1,6 +1,7 @@
 import {IMillisecond, InputArray} from '../../Interface';
+import { BaseMillisecond } from '../baseMillisecond';
 
-export class Millisecond1 implements IMillisecond {
+export class Millisecond1 extends BaseMillisecond implements IMillisecond {
     public digitList = {};
 
     public setList(listString: string) {

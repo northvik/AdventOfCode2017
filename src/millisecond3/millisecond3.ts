@@ -1,7 +1,8 @@
 import {IMillisecond, InputArray} from '../../Interface';
+import { BaseMillisecond } from '../baseMillisecond';
 
 // I must admit I didn't solved this one by my self
-export class Millisecond3 implements IMillisecond {
+export class Millisecond3 extends BaseMillisecond implements IMillisecond {
     public solvePartOne(input: InputArray): number {
         const cell = parseInt(input[0], 10);
         if (cell === 1){
