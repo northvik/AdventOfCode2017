@@ -6,9 +6,10 @@ import { Millisecond4 } from './src/millisecond4/millisecond4';
 import { Millisecond5 } from './src/millisecond5/millisecond5';
 import { Millisecond6 } from './src/millisecond6/millisecond6';
 import { Millisecond7 } from './src/millisecond7/millisecond7';
+import { Millisecond8 } from './src/millisecond8/millisecond8';
 
 let contents, millisecond, list;
-const nbOfMillisecond = 7;
+const nbOfMillisecond = 8;
 
 const constructors = {
     Millisecond1: Millisecond1,
@@ -17,7 +18,8 @@ const constructors = {
     Millisecond4: Millisecond4,
     Millisecond5: Millisecond5,
     Millisecond6: Millisecond6,
-    Millisecond7: Millisecond7
+    Millisecond7: Millisecond7,
+    Millisecond8: Millisecond8
 };
 
 // tslint:disable-next-line
