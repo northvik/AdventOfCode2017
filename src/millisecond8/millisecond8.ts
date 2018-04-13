@@ -4,6 +4,7 @@ import { IMillisecond, InputArray } from '../../Interface';
 export class Millisecond8 extends BaseMillisecond implements IMillisecond {
     protected instructions = {};
     public registers = {};
+    protected highest = -10000;
 
     public solvePartOne(input: InputArray): any {
         this.registers = {};
@@ -13,7 +14,8 @@ export class Millisecond8 extends BaseMillisecond implements IMillisecond {
     }
 
     public solvePartTwo(input: InputArray): any {
-        return input[0];
+        this.solvePartOne(input);
+        return this.highest;
     }
 
     public parseInput(input: InputArray): void {
@@ -31,7 +33,7 @@ export class Millisecond8 extends BaseMillisecond implements IMillisecond {
                 condition: {
                     register: result[4],
                     condition: result[5],
-                    value: result[6]
+                    value: parseInt(result[6], 10)
                 }
             };
             i++;
@@ -46,6 +48,9 @@ export class Millisecond8 extends BaseMillisecond implements IMillisecond {
                     this.registers[instruction.register] = this.getRegisterValue(instruction.register) + instruction.amount;
                 } else {
                     this.registers[instruction.register] = this.getRegisterValue(instruction.register) - instruction.amount;
+                }
+                if (this.registers[instruction.register] > this.highest) {
+                    this.highest = this.registers[instruction.register];
                 }
             }
         }
@@ -78,13 +83,13 @@ export class Millisecond8 extends BaseMillisecond implements IMillisecond {
     }
 
     protected getTopValue(): number {
-        let top = -1000000000000000;
+        let highest = -1000000000000000;
         for (let key of Object.keys(this.registers)) {
             const register = this.registers[key];
-            if (register > top) {
-                top = register;
+            if (register > highest) {
+                highest = register;
             }
         }
-        return top;
+        return highest;
     }
 }

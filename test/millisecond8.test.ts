@@ -33,12 +33,9 @@ describe('Testing Millisecond 8', () => {
             expect(millisecond.solvePartOne(input)).to.equal(1);
         });
     });
-    // describe('Part 2', () => {
-    //     it('should return weight 60', () => {
-    //         expect(millisecond.solvePartTwo(input)).to.equal(60);
-    //     });
-    //     it('should return weight 72', () => {
-    //         expect(millisecond.solvePartTwo(input2)).to.equal(72);
-    //     });
-    // });
+    describe('Part 2', () => {
+        it('should return highest ever number 10', () => {
+            expect(millisecond.solvePartTwo(input)).to.equal(10);
+        });
+    });
 });
