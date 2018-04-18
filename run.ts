@@ -7,9 +7,9 @@ import { Millisecond5 } from './src/millisecond5/millisecond5';
 import { Millisecond6 } from './src/millisecond6/millisecond6';
 import { Millisecond7 } from './src/millisecond7/millisecond7';
 import { Millisecond8 } from './src/millisecond8/millisecond8';
+import { Millisecond9 } from './src/millisecond9/millisecond9';
 
 let contents, millisecond, list;
-const nbOfMillisecond = 8;
 
 const constructors = {
     Millisecond1: Millisecond1,
@@ -19,13 +19,14 @@ const constructors = {
     Millisecond5: Millisecond5,
     Millisecond6: Millisecond6,
     Millisecond7: Millisecond7,
-    Millisecond8: Millisecond8
+    Millisecond8: Millisecond8,
+    Millisecond9: Millisecond9
 };
 
 // tslint:disable-next-line
 console.log('\n\n############### CAPTCHA RESULT ###############\n');
 
-for (let i = 1; i <= nbOfMillisecond; i++) {
+for (let i = 1; i <= Object.keys(constructors).length; i++) {
     contents = fs.readFileSync('./src/millisecond' + i + '/input.txt').toString();
     list = contents.split('\n');
     millisecond = new constructors['Millisecond' + i]();
