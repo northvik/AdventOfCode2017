@@ -26,7 +26,7 @@ export class Millisecond10 extends BaseMillisecond implements IMillisecond{
         this.input = [...input[0]].map((x) => {
             return x.charCodeAt(0);
         });
-        this.input = [...this.input, ...[17, 31, 73, 47, 23]];
+        this.input = this.getSecondInputArray(this.input);
         this.currentPos = 0;
         this.skipSize = 0;
         this.generateList(256);
@@ -40,11 +40,18 @@ export class Millisecond10 extends BaseMillisecond implements IMillisecond{
         return this.toHexString(denseHash);
     }
 
+    public getSecondInputArray(input: number[]) {
+        return [...input, ...[17, 31, 73, 47, 23]];
+    }
+
     public getDenseHash() {
         let denseHash = [];
         let count = 1;
         let value = 0;
         for (let j = 0; j < 256; j++) {
+            if (this.list[j] === null) {
+                continue;
+            }
             value = value ^ this.list[j];
             if (count >= 16) {
                 denseHash.push(value);
