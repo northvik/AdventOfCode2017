@@ -32,8 +32,15 @@ describe('Testing Millisecond 10', () => {
         });
     });
     describe('Part 2', () => {
-        it('should return hash of empty', () => {
-            expect(millisecond.solvePartTwo([''])).to.equal('a2582a3a0e66e6e86e3812dcb672a272');
+        it('should return the right input array', () => {
+            expect(millisecond.getSecondInputArray([...'1,2,3'].map((x) => {
+                        return x.charCodeAt(0);
+                    }))
+                ).to.deep.equal([49, 44, 50, 44, 51, 17, 31, 73, 47, 23]);
+        });
+        it('should return a densehash of 64', () => {
+            millisecond.solvePartTwo(['1,2,3']);
+            expect(millisecond.getDenseHash()[0]).to.equal(64);
         });
     });
 });
