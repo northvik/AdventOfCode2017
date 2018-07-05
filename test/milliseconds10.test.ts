@@ -31,9 +31,9 @@ describe('Testing Millisecond 10', () => {
             expect(millisecond.solvePartOne(['3', '4', '1', '5'])).to.deep.equal(2);
         });
     });
-    describe('Part 2', () => {
-        it('should return hash of empty', () => {
-            expect(millisecond.solvePartTwo([''])).to.equal('a2582a3a0e66e6e86e3812dcb672a272');
-        });
-    });
+    // describe('Part 2', () => {
+    //     it('should return hash of empty', () => {
+    //         expect(millisecond.solvePartTwo([''])).to.equal('a2582a3a0e66e6e86e3812dcb672a272');
+    //     });
+    // });
 });

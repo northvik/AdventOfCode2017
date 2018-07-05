@@ -35,5 +35,5 @@ for (let i = 1; i <= Object.keys(constructors).length; i++) {
 // tslint:disable-next-line
     console.log('Millisecond ' + i + ':');
 // tslint:disable-next-line
-    console.log('     Part 1: ' + millisecond.solvePartOne(list) + '\n     Part 2: ' +millisecond.solvePartTwo(list));
+    console.log('     Part 1: ' + millisecond.solvePartOne(list) + '\n     Part 2: NOT SOLVED' +millisecond.solvePartTwo(list));
 }
